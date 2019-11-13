@@ -16,5 +16,10 @@
     "redux-devtools-extension": "^2.13.8",
     "redux-thunk": "^2.3.0"
   },
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "@zeit/next-sass": "^1.0.1",
+    "node-sass": "^4.13.0",
+    "sass-loader": "^8.0.0"
+  }
 }

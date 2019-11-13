@@ -88,10 +88,53 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ({
+
+/***/ "./components/Posts/Posts.jsx":
+/*!************************************!*\
+  !*** ./components/Posts/Posts.jsx ***!
+  \************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _Posts_module_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Posts.module.scss */ "./components/Posts/Posts.module.scss");
+/* harmony import */ var _Posts_module_scss__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_Posts_module_scss__WEBPACK_IMPORTED_MODULE_1__);
+var _jsxFileName = "/home/sergey/Documents/NextJS/examples/with-redux-thunk-app/components/Posts/Posts.jsx";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+/* harmony default export */ __webpack_exports__["default"] = (props => {
+  return __jsx("div", {
+    className: _Posts_module_scss__WEBPACK_IMPORTED_MODULE_1___default.a.posts,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 7
+    },
+    __self: undefined
+  }, "Posts");
+});
+
+/***/ }),
+
+/***/ "./components/Posts/Posts.module.scss":
+/*!********************************************!*\
+  !*** ./components/Posts/Posts.module.scss ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = {
+	"posts": "Tz8Y6IXSwiTnOELLA9aW0"
+};
+
+/***/ }),
 
 /***/ "./node_modules/@babel/runtime-corejs2/core-js/object/define-properties.js":
 /*!*********************************************************************************!*\
@@ -203,21 +246,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "react-redux");
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_redux__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _test_reducer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../test-reducer */ "./test-reducer.js");
+/* harmony import */ var _components_Posts_Posts__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/Posts/Posts */ "./components/Posts/Posts.jsx");
 var _jsxFileName = "/home/sergey/Documents/NextJS/examples/with-redux-thunk-app/pages/index.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
 
+
 class Index extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
   render() {
-    return __jsx("h1", {
+    return __jsx(_components_Posts_Posts__WEBPACK_IMPORTED_MODULE_3__["default"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 8
+        lineNumber: 9
       },
       __self: this
-    }, "Hi all");
+    });
   }
 
 }
@@ -298,7 +343,7 @@ const getPosts = () => ({
 
 /***/ }),
 
-/***/ 3:
+/***/ 4:
 /*!******************************!*\
   !*** multi ./pages/index.js ***!
   \******************************/
