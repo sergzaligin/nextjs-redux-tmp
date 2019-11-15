@@ -1,0 +1,54 @@
+{
+  "mini-css-extract-plugin node_modules/@zeit/next-css/node_modules/css-loader/index.js??ref--5-1!node_modules/sass-loader/dist/cjs.js??ref--5-2!components/Posts/Posts.module.scss": [
+    {
+      "modules": {
+        "byIdentifier": {},
+        "usedIds": {}
+      },
+      "chunks": {
+        "byName": {
+          "mini-css-extract-plugin": 0
+        },
+        "bySource": {},
+        "usedIds": [
+          0
+        ]
+      }
+    }
+  ],
+  "modules": {
+    "byIdentifier": {
+      "css node_modules/@zeit/next-css/node_modules/css-loader/index.js??ref--5-1!node_modules/sass-loader/dist/cjs.js??ref--5-2!components/Posts/Posts.module.scss 0": 0
+    },
+    "usedIds": {
+      "0": 0
+    }
+  },
+  "chunks": {
+    "byName": {
+      "static/runtime/webpack.js": 0,
+      "commons": 1,
+      "static/CyOwdVDrNbS0Jd4sOd8UG/pages/_app.js": 2,
+      "static/CyOwdVDrNbS0Jd4sOd8UG/pages/_error.js": 3,
+      "static/CyOwdVDrNbS0Jd4sOd8UG/pages/index.js": 4,
+      "static/CyOwdVDrNbS0Jd4sOd8UG/pages/posts/list.js": 5,
+      "static/CyOwdVDrNbS0Jd4sOd8UG/pages/posts/view.js": 6,
+      "static/runtime/main.js": 7,
+      "static/runtime/polyfills.js": 8,
+      "styles": 9
+    },
+    "bySource": {},
+    "usedIds": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ]
+  }
+}
