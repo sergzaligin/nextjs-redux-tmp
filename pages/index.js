@@ -12,15 +12,15 @@ class Index extends React.Component {
 	}
 
 	render() {
-		return <Posts />;
+		return <Posts posts={ this.props.posts } />;
 	}
 
-}
+};
 
 const mapStateToProps = (state) => {
     return {
     	posts: state.testPage.posts
     };
-}
+};
 
-export default connect(null, {fetchPosts})(Index)
+export default connect(mapStateToProps, { fetchPosts })(Index);

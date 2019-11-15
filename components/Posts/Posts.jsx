@@ -2,7 +2,8 @@ import React from 'react';
 
 import classes from './Posts.module.scss';
 
-export default (props) => {
+export default ({ posts }) => {
+
 	return(
 		<div className={ classes.posts } >
 			Posts

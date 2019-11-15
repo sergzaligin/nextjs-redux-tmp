@@ -913,14 +913,11 @@ const setPosts = posts => ({
   posts
 });
 const fetchPosts = () => {
-  return dispatch => {
-    _api__WEBPACK_IMPORTED_MODULE_7__["postsAPI"].list().then(res => {
-      console.log('her', res);
-      dispatch(setPosts(res));
-    });
-  }; // const response = await postsAPI.list();
-  // console.log(response);
-  // dispatch(setPosts(response));
+  return async dispatch => {
+    const response = await _api__WEBPACK_IMPORTED_MODULE_7__["postsAPI"].list();
+    console.log('res', response);
+    dispatch(setPosts(response));
+  };
 };
 
 /***/ }),

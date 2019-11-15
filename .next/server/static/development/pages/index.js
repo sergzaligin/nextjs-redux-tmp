@@ -139,12 +139,14 @@ var _jsxFileName = "/home/sergey/Documents/NextJS/examples/with-redux-thunk-app/
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
-/* harmony default export */ __webpack_exports__["default"] = (props => {
+/* harmony default export */ __webpack_exports__["default"] = (({
+  posts
+}) => {
   return __jsx("div", {
     className: _Posts_module_scss__WEBPACK_IMPORTED_MODULE_1___default.a.posts,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 7
+      lineNumber: 8
     },
     __self: undefined
   }, "Posts");
@@ -290,6 +292,7 @@ class Index extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
 
   render() {
     return __jsx(_components_Posts_Posts__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      posts: this.props.posts,
       __source: {
         fileName: _jsxFileName,
         lineNumber: 15
@@ -300,13 +303,15 @@ class Index extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
 
 }
 
+;
+
 const mapStateToProps = state => {
   return {
     posts: state.testPage.posts
   };
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(null, {
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mapStateToProps, {
   fetchPosts: _test_reducer__WEBPACK_IMPORTED_MODULE_3__["fetchPosts"]
 })(Index));
 
@@ -370,14 +375,11 @@ const setPosts = posts => ({
   posts
 });
 const fetchPosts = () => {
-  return dispatch => {
-    _api__WEBPACK_IMPORTED_MODULE_7__["postsAPI"].list().then(res => {
-      console.log('her', res);
-      dispatch(setPosts(res));
-    });
-  }; // const response = await postsAPI.list();
-  // console.log(response);
-  // dispatch(setPosts(response));
+  return async dispatch => {
+    const response = await _api__WEBPACK_IMPORTED_MODULE_7__["postsAPI"].list();
+    console.log('res', response);
+    dispatch(setPosts(response));
+  };
 };
 
 /***/ }),
