@@ -88,10 +88,39 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ({
+
+/***/ "./api/index.js":
+/*!**********************!*\
+  !*** ./api/index.js ***!
+  \**********************/
+/*! exports provided: postsAPI */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "postsAPI", function() { return postsAPI; });
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "axios");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+
+const instance = axios__WEBPACK_IMPORTED_MODULE_0___default.a.create({
+  baseURL: 'http://localhost:4445/api/'
+});
+const postsAPI = {
+  list() {
+    return instance.get(`article/list`).then(res => res.data);
+  },
+
+  getOne(id) {
+    return instance.post(`article/${id}`);
+  }
+
+};
+
+/***/ }),
 
 /***/ "./components/Posts/Posts.jsx":
 /*!************************************!*\
@@ -245,8 +274,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "react-redux");
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_redux__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _test_reducer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../test-reducer */ "./test-reducer.js");
-/* harmony import */ var _components_Posts_Posts__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/Posts/Posts */ "./components/Posts/Posts.jsx");
+/* harmony import */ var _components_Posts_Posts__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/Posts/Posts */ "./components/Posts/Posts.jsx");
+/* harmony import */ var _test_reducer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../test-reducer */ "./test-reducer.js");
 var _jsxFileName = "/home/sergey/Documents/NextJS/examples/with-redux-thunk-app/pages/index.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
@@ -255,11 +284,15 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 class Index extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
+  componentDidMount() {
+    this.props.fetchPosts();
+  }
+
   render() {
-    return __jsx(_components_Posts_Posts__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    return __jsx(_components_Posts_Posts__WEBPACK_IMPORTED_MODULE_2__["default"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 9
+        lineNumber: 15
       },
       __self: this
     });
@@ -268,11 +301,13 @@ class Index extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
 }
 
 const mapStateToProps = state => {
-  return {};
+  return {
+    posts: state.testPage.posts
+  };
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mapStateToProps, {
-  getPosts: _test_reducer__WEBPACK_IMPORTED_MODULE_2__["getPosts"]
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(null, {
+  fetchPosts: _test_reducer__WEBPACK_IMPORTED_MODULE_3__["fetchPosts"]
 })(Index));
 
 /***/ }),
@@ -281,12 +316,13 @@ const mapStateToProps = state => {
 /*!*************************!*\
   !*** ./test-reducer.js ***!
   \*************************/
-/*! exports provided: default, getPosts */
+/*! exports provided: default, setPosts, fetchPosts */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getPosts", function() { return getPosts; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "setPosts", function() { return setPosts; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchPosts", function() { return fetchPosts; });
 /* harmony import */ var _babel_runtime_corejs2_core_js_object_define_property__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/define-property */ "./node_modules/@babel/runtime-corejs2/core-js/object/define-property.js");
 /* harmony import */ var _babel_runtime_corejs2_core_js_object_define_property__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_object_define_property__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _babel_runtime_corejs2_core_js_object_define_properties__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/define-properties */ "./node_modules/@babel/runtime-corejs2/core-js/object/define-properties.js");
@@ -300,6 +336,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/keys */ "./node_modules/@babel/runtime-corejs2/core-js/object/keys.js");
 /* harmony import */ var _babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_5__);
 /* harmony import */ var _babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/defineProperty */ "./node_modules/@babel/runtime-corejs2/helpers/esm/defineProperty.js");
+/* harmony import */ var _api__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./api */ "./api/index.js");
 
 
 
@@ -312,38 +349,40 @@ function ownKeys(object, enumerableOnly) { var keys = _babel_runtime_corejs2_cor
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(source, true).forEach(function (key) { Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(target, key, source[key]); }); } else if (_babel_runtime_corejs2_core_js_object_get_own_property_descriptors__WEBPACK_IMPORTED_MODULE_2___default.a) { _babel_runtime_corejs2_core_js_object_define_properties__WEBPACK_IMPORTED_MODULE_1___default()(target, _babel_runtime_corejs2_core_js_object_get_own_property_descriptors__WEBPACK_IMPORTED_MODULE_2___default()(source)); } else { ownKeys(source).forEach(function (key) { _babel_runtime_corejs2_core_js_object_define_property__WEBPACK_IMPORTED_MODULE_0___default()(target, key, _babel_runtime_corejs2_core_js_object_get_own_property_descriptor__WEBPACK_IMPORTED_MODULE_3___default()(source, key)); }); } } return target; }
 
+
 const initialState = {
-  posts: [{
-    id: 1,
-    message: 'Hi John! How are you?',
-    likesCount: 3
-  }, {
-    id: 2,
-    message: 'Hi Bill! I am fine thanks!',
-    likesCount: 3
-  }, {
-    id: 3,
-    message: 'Hi Fred!',
-    likesCount: 3
-  }]
+  posts: null
 };
-const GET_POSTS = 'GET_POSTS';
+const SET_POSTS = 'SET_POSTS';
 /* harmony default export */ __webpack_exports__["default"] = ((state = initialState, action) => {
   switch (action.type) {
-    case GET_POSTS:
-      return _objectSpread({}, state);
+    case SET_POSTS:
+      return _objectSpread({}, state, {
+        posts: action.posts
+      });
 
     default:
       return state;
   }
 });
-const getPosts = () => ({
-  type: GET_POSTS
+const setPosts = posts => ({
+  type: SET_POSTS,
+  posts
 });
+const fetchPosts = () => {
+  return dispatch => {
+    _api__WEBPACK_IMPORTED_MODULE_7__["postsAPI"].list().then(res => {
+      console.log('her', res);
+      dispatch(setPosts(res));
+    });
+  }; // const response = await postsAPI.list();
+  // console.log(response);
+  // dispatch(setPosts(response));
+};
 
 /***/ }),
 
-/***/ 4:
+/***/ 3:
 /*!******************************!*\
   !*** multi ./pages/index.js ***!
   \******************************/
@@ -352,6 +391,17 @@ const getPosts = () => ({
 
 module.exports = __webpack_require__(/*! /home/sergey/Documents/NextJS/examples/with-redux-thunk-app/pages/index.js */"./pages/index.js");
 
+
+/***/ }),
+
+/***/ "axios":
+/*!************************!*\
+  !*** external "axios" ***!
+  \************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("axios");
 
 /***/ }),
 

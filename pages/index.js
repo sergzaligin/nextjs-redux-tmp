@@ -1,17 +1,26 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { getPosts } from '../test-reducer';
 
 import Posts from '../components/Posts/Posts';
 
+import { fetchPosts } from '../test-reducer';
+
 class Index extends React.Component {
-  render() {
-    return <Posts />;
-  }
+
+	componentDidMount(){
+		this.props.fetchPosts();
+	}
+
+	render() {
+		return <Posts />;
+	}
+
 }
 
 const mapStateToProps = (state) => {
-    return {};
+    return {
+    	posts: state.testPage.posts
+    };
 }
 
-export default connect(mapStateToProps, { getPosts })(Index)
+export default connect(null, {fetchPosts})(Index)
