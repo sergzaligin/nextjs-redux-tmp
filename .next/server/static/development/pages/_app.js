@@ -105,13 +105,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "postsAPI", function() { return postsAPI; });
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "axios");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! isomorphic-unfetch */ "isomorphic-unfetch");
+/* harmony import */ var isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_1__);
+
 
 const instance = axios__WEBPACK_IMPORTED_MODULE_0___default.a.create({
   baseURL: 'http://localhost:4445/api/'
 });
 const postsAPI = {
-  list() {
-    return instance.get(`article/list`).then(res => res.data);
+  async list() {
+    const res = await isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_1___default()(`http://localhost:4445/api/article/list`);
+    const data = await res.json();
+    return data; //console.log(data);
   },
 
   getOne(id) {
@@ -1030,6 +1035,17 @@ module.exports = require("core-js/library/fn/object/keys");
 /***/ (function(module, exports) {
 
 module.exports = require("core-js/library/fn/promise");
+
+/***/ }),
+
+/***/ "isomorphic-unfetch":
+/*!*************************************!*\
+  !*** external "isomorphic-unfetch" ***!
+  \*************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("isomorphic-unfetch");
 
 /***/ }),
 

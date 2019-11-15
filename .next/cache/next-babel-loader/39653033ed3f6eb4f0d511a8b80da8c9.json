@@ -1,1 +1,0 @@
-{"ast":null,"code":"import axios from 'axios';\nconst instance = axios.create({\n  baseURL: 'http://localhost:4445/api/'\n});\nexport const postsAPI = {\n  list() {\n    return instance.get(`article/list`).then(res => res.data);\n  },\n\n  getOne(id) {\n    return instance.post(`article/${id}`);\n  }\n\n};","map":null,"metadata":{},"sourceType":"module"}

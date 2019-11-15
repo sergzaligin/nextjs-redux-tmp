@@ -21,12 +21,12 @@
     "byName": {
       "init-server.js": 0,
       "on-error-server.js": 1,
-      "static/CyOwdVDrNbS0Jd4sOd8UG/pages/_app.js": 2,
-      "static/CyOwdVDrNbS0Jd4sOd8UG/pages/_document.js": 3,
-      "static/CyOwdVDrNbS0Jd4sOd8UG/pages/_error.js": 4,
-      "static/CyOwdVDrNbS0Jd4sOd8UG/pages/index.js": 5,
-      "static/CyOwdVDrNbS0Jd4sOd8UG/pages/posts/list.js": 6,
-      "static/CyOwdVDrNbS0Jd4sOd8UG/pages/posts/view.js": 7
+      "static/bgFmgJpFWgHMkDPd_lR4V/pages/_app.js": 2,
+      "static/bgFmgJpFWgHMkDPd_lR4V/pages/_document.js": 3,
+      "static/bgFmgJpFWgHMkDPd_lR4V/pages/_error.js": 4,
+      "static/bgFmgJpFWgHMkDPd_lR4V/pages/index.js": 5,
+      "static/bgFmgJpFWgHMkDPd_lR4V/pages/posts/list.js": 6,
+      "static/bgFmgJpFWgHMkDPd_lR4V/pages/posts/view.js": 7
     },
     "bySource": {},
     "usedIds": [
