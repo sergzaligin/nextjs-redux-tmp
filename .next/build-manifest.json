@@ -31,6 +31,14 @@
     "/next/dist/pages/_error": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
+    ],
+    "/posts/list": [
+      "static/runtime/webpack.js",
+      "static/runtime/main.js"
+    ],
+    "/posts/view": [
+      "static/runtime/webpack.js",
+      "static/runtime/main.js"
     ]
   }
 }
